@@ -1,0 +1,21 @@
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    command: npm run dev
+    volumes:
+      - ./server:/app        # 호스트 소스코드 마운트
+      - /app/node_modules    # 의존성 캐시
+    ports:
+      - "5001:5001"
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    command: npm run dev
+    volumes:
+      - ./client:/app        # 호스트 소스코드 마운트
+      - /app/node_modules
+    ports:
+      - "5173:5173"          # Vite 기본 포트
