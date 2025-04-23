@@ -52,7 +52,7 @@ npm install -D vite-plugin-pages
 docker-compost up --build
 ```
 
-docker container remove
+- docker container remove
 ```
 docker compose down
 ```
